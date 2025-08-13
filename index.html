@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fajri Muhammad Ridwan | Link in Bio</title>
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            opacity: 0; /* Start invisible for fade-in */
+            transition: opacity 1s ease;
+        }
+        
+        /* Profile Section */
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+        
+        .profile-name {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .profile-desc {
+            font-size: 1rem;
+            color: #666;
+            max-width: 300px;
+            line-height: 1.4;
+        }
+        
+        /* Links Section */
+        .links {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .link-item {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .link-item:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .link-text {
+            flex: 1;
+            font-weight: 500;
+        }
+        
+        /* Footer */
+        footer {
+            margin-top: auto;
+            color: #888;
+            font-size: 0.9rem;
+            padding: 20px 0;
+            text-align: center;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 480px) {
+            .profile-name {
+                font-size: 1.5rem;
+            }
+            
+            .profile-desc {
+                font-size: 0.9rem;
+            }
+            
+            .links {
+                gap: 12px;
+            }
+            
+            .link-item {
+                padding: 12px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="profile">
+        <!-- Replace with actual profile.png path -->
+        <img src="https://via.placeholder.com/120" alt="Profile Photo" class="profile-img" id="profileImage">
+        <h1 class="profile-name">Fajri Muhammad Ridwan</h1>
+        <p class="profile-desc">rebuilding quietly. one function at a time.</p>
+    </div>
+    
+    <div class="links">
+        <a href="https://wa.me/62895xxxxxx57" class="link-item" target="_blank" rel="noopener noreferrer">
+            <div class="link-icon">📱</div>
+            <div class="link-text">WA: 0895******57</div>
+        </a>
+        
+        <a href="https://instagram.com/reksanctuary_" class="link-item" target="_blank" rel="noopener noreferrer">
+            <div class="link-icon">📷</div>
+            <div class="link-text">IG: @reksanctuary_</div>
+        </a>
+        
+        <a href="https://twitter.com/Reksantuary" class="link-item" target="_blank" rel="noopener noreferrer">
+            <div class="link-icon">🐦</div>
+            <div class="link-text">X: @Reksantuary</div>
+        </a>
+        
+        <a href="https://github.com/Xierenn" class="link-item" target="_blank" rel="noopener noreferrer">
+            <div class="link-icon">💻</div>
+            <div class="link-text">Github: Xierenn</div>
+        </a>
+    </div>
+    
+    <footer>
+        © 2025 - mybio
+    </footer>
+    
+    <script>
+        // Fade-in animation when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.opacity = '1';
+            
+            // You would replace this with your actual profile image path
+            // document.getElementById('profileImage').src = 'profil.png';
+            
+            // Add hover effects via JS (additional to CSS)
+            const linkItems = document.querySelectorAll('.link-item');
+            
+            linkItems.forEach(item => {
+                // Random pastel color for each link on hover
+                const hue = Math.floor(Math.random() * 360);
+                
+                item.addEventListener('mouseenter', () => {
+                    item.style.backgroundColor = `hsla(${hue}, 100%, 85%, 0.3)`;
+                    item.style.borderColor = `hsla(${hue}, 100%, 70%, 0.5)`;
+                });
+                
+                item.addEventListener('mouseleave', () => {
+                    item.style.backgroundColor = 'rgba(255, 255, 255, 0.8)';
+                    item.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
